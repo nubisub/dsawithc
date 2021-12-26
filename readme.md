@@ -1,4 +1,4 @@
-# dsawithc
+# DSA With C
 
 > [`01. Pengenalan`](praktikum/01#pengenalan-dan-persiapan-pemrograman-bahasa-c)  
 > [`02. Tipe Data Dan Array`](praktikum/02#tipe-data-dan-array-pada-c)  
