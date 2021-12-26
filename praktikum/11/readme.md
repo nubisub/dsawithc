@@ -1,0 +1,4 @@
+# Pencarian/Searching
+1. Modifikasilah file [modul11a1.c](modul.c) dan file [modul11a2.c](modul.c) supaya dapat mengakomodasi pencarian sekuensial pada data yang terurut, baik urut menaik atau menurun.
+2. [Buat program untuk pencarian data students](nomor2.c) berisi `int nim, char nama[50]` dengan struktur array. pencarian bisa dilakukan secara sekuensial/biner dengan berdasarkan nim atau berdasarkan nama.
+3. [Buat program untuk pencarian data students](nomor3.c) berisi `int nim, char nama[50]` dengan struktur linked list. pencarian bisa dilakukan secara sekuensial/biner dengan berdasarkan nim atau berdasarkan nama.

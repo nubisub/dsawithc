@@ -1,0 +1,4 @@
+# Hashing
+1. Modifikasi program [Praktikum10A.c](hashmodul.c) sehingga jumlah data yang disimpan pada tabel hash bisa fleksibel . Simpan hasil modifikasi Anda pada file [Praktikum10B.c](Praktikum10B.c).
+2. Modifikasi program [Praktikum10B.c](Praktikum10B.c) sehingga data pada baris/indeks yang dihapus `(flag=2)` tidak dapat diisi lagi. Simpan hasil modifikasi Anda pada file [Praktikum10C.c].(Praktikum10C.c)
+3. Modifikasi program [Praktikum10C.c](Praktikum10C.c) dengan tanpa menggunakan pointer dan collision resolutionnya dengan menggunakan metode quadratic probing. Simpan hasil modifikasi Anda pada file [Praktikum10D.c](Praktikum10D.c).

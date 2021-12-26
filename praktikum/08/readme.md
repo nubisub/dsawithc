@@ -1,0 +1,2 @@
+# Tree
+1. Modifikasi program pada [Praktikum8A.c](praktikum8a.c) sehingga data yang disimpan pada Binary Search Tree, bukan lagi sebuah angka bertipe integer, melainkan data nama mahasiswa dengan tipe `char[30]` .
