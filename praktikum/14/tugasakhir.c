@@ -1011,19 +1011,20 @@ void wildcardmenu(struct data *head)
         switch (cari)
         {
         case 1:
-            l=wildcard(current, current->nama, nama);
+            l = wildcard(current, current->nama, nama);
             break;
         case 2:
-            l=wildcard(current, current->phone, phone);
+            l = wildcard(current, current->phone, phone);
             break;
         case 3:
-            l=wildcard(current, current->email, email);
+            l = wildcard(current, current->email, email);
             break;
         default:
             break;
         }
-        if (l==1){
-        printf("   %s\t %d\t\t %s\t %s\t      %s\n", current->nama, current->umur, current->sex,current->phone, current->email);
+        if (l == 1)
+        {
+            printf("   %s\t %d\t\t %s\t %s\t      %s\n", current->nama, current->umur, current->sex, current->phone, current->email);
         }
         current = current->next;
     }
