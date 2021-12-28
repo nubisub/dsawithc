@@ -115,7 +115,7 @@ ptrnode carimenu(struct data *head)
         current = cariemail(email, head);
         break;
     case 4:
-        return;
+        return NULL;
     default:
         printf("Pilihan tidak ada\n");
         break;
@@ -958,6 +958,99 @@ void carimenuor(struct data *head)
     system("pause");
     return current;
 }
+// wildcard menu
+void wildcardmenu(struct data *head)
+{
+    char nama[20];
+    char phone[20];
+    char email[40];
+    printf("\n");
+    printf("======================================\n");
+    printf("            Cari Berdasar ?\n");
+    printf("======================================\n");
+    struct data *current = head->next;
+    int cari;
+    printf("\t1.Nama\n");
+    printf("\t2.Nomor Telephone\n");
+    printf("\t3.Email\n");
+    printf("\t4.Kembali\n");
+    printf("======================================\n");
+    printf("\tPilihan Anda : ");
+    scanf("%d", &cari);
+    printf("======================================\n");
+    switch (cari)
+    {
+    case 1:
+        printf("Masukkan Nama : ");
+        getchar();
+        scanf("%[^\n]s", &nama);
+        break;
+    case 2:
+        printf("Masukkan Nomor : ");
+        scanf("%s", phone);
+        break;
+    case 3:
+        printf("Masukkan Email : ");
+        scanf("%s", email);
+        break;
+    case 4:
+        return;
+    default:
+        printf("Pilihan tidak ada\n");
+        break;
+    }
+    system("cls");
+    printf("\n===============================================");
+    printf("===============================================\n");
+    printf("\tNama \t|\t Umur\t|\t Sex\t|\t Phone\t|\t Email\n");
+    printf("===============================================");
+    printf("===============================================\n");
+    int l;
+    while (current != NULL)
+    {
+        switch (cari)
+        {
+        case 1:
+            l=wildcard(current, current->nama, nama);
+            break;
+        case 2:
+            l=wildcard(current, current->phone, phone);
+            break;
+        case 3:
+            l=wildcard(current, current->email, email);
+            break;
+        default:
+            break;
+        }
+        if (l==1){
+        printf("   %s\t %d\t\t %s\t %s\t      %s\n", current->nama, current->umur, current->sex,current->phone, current->email);
+        }
+        current = current->next;
+    }
+    printf("\n\n");
+    system("pause");
+}
+// wildcard match
+int wildcard(struct data *head, char str[], char pattern[])
+{
+    int n = strlen(str);
+    int m = strlen(pattern);
+    int i, j;
+    for (i = 0; i <= n; i++)
+    {
+        for (j = 0; j < m; j++)
+        {
+            if (pattern[j] == '?')
+                continue;
+            if (pattern[j] != str[i + j])
+                break;
+        }
+        if (j == m)
+        {
+            return 1;
+        }
+    }
+}
 // switch pilih
 void pilihan(int n, struct data *head, struct undo *top, struct stack *high, struct redo *pot)
 {
@@ -1013,13 +1106,12 @@ void pilihan(int n, struct data *head, struct undo *top, struct stack *high, str
         break;
     case 14:
         carimenuand(head);
-
         break;
     case 15:
         carimenuor(head);
         break;
     case 16:
-        // cektop(top);
+        wildcardmenu(head);
         break;
     case 17:
         break;
@@ -1055,7 +1147,7 @@ void menu()
     printf("\t 13.Redo\n");
     printf("\t 14.Search (And)\n");
     printf("\t 15.Search (Or)\n");
-    // printf("\t 16.Wildcard Search\n");
+    printf("\t 16.Wildcard Search\n");
     // printf("\t 17.Konektivitas\n");
     printf("\t 18.Exit\n");
     printf("======================================\n");
